@@ -19,11 +19,8 @@ public static class ProjectBoardApis
     /// <param name="app">The endpoint route builder.</param>
     public static void MapProjectBoardApis(this IEndpointRouteBuilder app)
     {
-#pragma warning disable ASPDEPR002
         var boardGroup = app.MapGroup("/api/projectboards")
-            .WithTags("Project Boards")
-            .WithOpenApi();
-#pragma warning restore ASPDEPR002
+            .WithTags("Project Boards");
 
         // Project Board endpoints
         boardGroup.MapGet("/", GetAllProjectBoards);
